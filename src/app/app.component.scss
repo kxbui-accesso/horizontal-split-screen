@@ -1,0 +1,27 @@
+.top {
+  background: grey;
+  height: auto;
+
+  &.closed {
+    height: 0;
+    display: none;
+  }
+}
+
+.bottom {
+  background-color: blue;
+  transition-timing-function: ease-in;
+  transition: 0.5s;
+  transform: translateY(130%);
+  visibility: hidden;
+  height: 0;
+
+  &.open {
+    visibility: visible;
+    height: auto;
+    transition-timing-function: ease-out;
+    transition: 0.25s;
+    transform: translateY(0);
+
+  }
+}

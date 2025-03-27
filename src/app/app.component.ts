@@ -1,13 +1,23 @@
-import { Component } from '@angular/core';
+import { NgClass } from '@angular/common';
+import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, NgClass],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'horizontal-split-screen';
+  
+  open = signal(false);
+
+  openTop() {
+    this.open.set(false)
+  }
+  
+  openBottom() {
+    this.open.set(true)
+  }
 }
